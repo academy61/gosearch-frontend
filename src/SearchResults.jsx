@@ -18,7 +18,7 @@ function SearchResults() {
     if (query) {
       setLoading(true);
       setError(null);
-      fetch(`http://127.0.0.1:5000/api/search?q=${encodeURIComponent(query)}`)
+      fetch(`https://gosearch-backend.onrender.com/api/search?q=${encodeURIComponent(query)}`)
         .then(response => {
           if (!response.ok) {
             throw new Error(`HTTP error! status: ${response.status}`);
@@ -50,7 +50,7 @@ function SearchResults() {
   useEffect(() => {
     const checkAuthStatus = async () => {
       try {
-        const response = await fetch('http://127.0.0.1:5000/api/user', {
+        const response = await fetch('https://gosearch-backend.onrender.com/api/user', {
           credentials: 'include'
         });
         if (response.ok) {
@@ -72,7 +72,7 @@ function SearchResults() {
 
   const handleLogout = async () => {
     try {
-      const response = await fetch('http://127.0.0.1:5000/api/logout', {
+      const response = await fetch('https://gosearch-backend.onrender.com/api/logout', {
         method: 'POST',
         credentials: 'include'
       });

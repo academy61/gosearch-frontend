@@ -11,7 +11,7 @@ function Home() {
     // Check user authentication status on component mount
     const checkAuthStatus = async () => {
       try {
-        const response = await fetch('http://127.0.0.1:5000/api/user', {
+        const response = await fetch('https://gosearch-backend.onrender.com', {
           credentials: 'include'
         });
         if (response.ok) {

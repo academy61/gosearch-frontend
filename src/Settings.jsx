@@ -10,7 +10,7 @@ function Settings() {
     // Fetch current settings from backend
     const fetchSettings = async () => {
       try {
-        const response = await fetch('http://127.0.0.1:5000/api/settings', {
+        const response = await fetch('https://gosearch-backend.onrender.com/api/settings', {
           credentials: 'include' // Important for sending cookies
         });
         if (response.status === 401) {
@@ -34,7 +34,7 @@ function Settings() {
     event.preventDefault();
     setMessage('');
     try {
-      const response = await fetch('http://127.0.0.1:5000/api/settings', {
+      const response = await fetch('https://gosearch-backend.onrender.com/api/settings', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
